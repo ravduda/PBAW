@@ -1,5 +1,6 @@
 <?php
-require_once("../../config.php");
+require_once dirname(__FILE__).'/../../config.php';
+
 session_start();
 
 $form = [];
@@ -11,12 +12,12 @@ function redirect_logged_user(){
     }
 }
 
-function get_params(&$form){
+function get_login_params(&$form){
     $form["login"] = isset($_REQUEST["login"]) ? $_REQUEST["login"] : null;
     $form["password"] = isset($_REQUEST["password"]) ? $_REQUEST["password"] : null;
 }
 
-function validate(&$form, &$messages){
+function validateLogin(&$form, &$messages){
     if(!isset($form["login"]) && !isset($form["password"])){
         return false;
     }
@@ -42,8 +43,8 @@ function validate(&$form, &$messages){
 }
 
 redirect_logged_user();
-get_params($form);
-if(validate($form, $messages)){
+get_login_params($form);
+if(validateLogin($form, $messages)){
     header("Location: "._APP_URL);
 }
 

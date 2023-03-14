@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION['role'])){
-    include 'login.php';
+    include_once 'login.php';
     exit();
 }
 

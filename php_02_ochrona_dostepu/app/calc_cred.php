@@ -1,6 +1,6 @@
 <?php
 require_once dirname(__FILE__).'/../config.php';
-
+require_once "security/check.php";
 // $messages = [];
 $kwota = null;
 $lat = null;

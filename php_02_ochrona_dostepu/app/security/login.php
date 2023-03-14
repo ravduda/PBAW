@@ -47,4 +47,4 @@ if(validate($form, $messages)){
     header("Location: "._APP_URL);
 }
 
-// include_once("login_view.php");
+include_once("login_view.php");

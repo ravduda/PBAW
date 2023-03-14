@@ -1,13 +1,11 @@
 <?php
 define('_SERVER_NAME', 'localhost');
 define('_SERVER_URL', 'http://'._SERVER_NAME);
-define('_APP_ROOT', '/php_01_widok_kontroler');
+define('_APP_ROOT', '/php_02_ochrona_dostepu');
 define('_APP_URL', _SERVER_URL._APP_ROOT);
 define("_ROOT_PATH", dirname(__FILE__));
 
 function out(&$val){
-    if(isset($val)){
-        echo $val;
-    }
+    return isset($val) ? $val : "";
 }
 ?>

@@ -1,4 +1,7 @@
-<?php require_once dirname(__FILE__) .'/../config.php';?>
+<?php 
+require_once dirname(__FILE__) .'/../config.php';
+require_once "security/check.php";
+?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>

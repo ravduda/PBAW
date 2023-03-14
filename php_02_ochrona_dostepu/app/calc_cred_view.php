@@ -9,16 +9,15 @@
 
 <form action="<?php print(_APP_URL);?>/app/calc_cred.php" method="get">
 	<label for="id_x">Kwota: </label>
-	<input id="id_x" type="text" name="kwota" value="<?php if(isset($kwota)) print($kwota); ?>" /><br />
+	<input id="id_x" type="text" name="kwota" value="<?php out($kwota); ?>" /><br />
 	<label for="id_x">Lat: </label>
-	<input id="id_x" type="text" name="lat" value="<?php if(isset($lat)) print($lat); ?>" /><br />
+	<input id="id_x" type="text" name="lat" value="<?php out($lat); ?>" /><br />
 	<label for="id_y">Procent: </label>
-	<input id="id_y" type="text" name="procent" value="<?php if(isset($procent)) print($procent); ?>" /><br />
+	<input id="id_y" type="text" name="procent" value="<?php out($procent); ?>" /><br />
 	<input type="submit" value="Oblicz" />
 </form>	
 
 <?php
-//wyświeltenie listy błędów, jeśli istnieją
 if (isset($messages)) {
 	if (count ( $messages ) > 0) {
 		echo '<ol style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #f88; width:300px;">';

@@ -13,6 +13,9 @@
 </head>
 <body>
 	<div class="calc-form">
+		<div>
+			<a href="<?php print(_APP_URL);?>/app/security/logout.php" class="pure-button">Wyloguj</a>
+		</div>
 		<form action="<?php print(_APP_URL);?>/app/calc_cred.php" method="get" class="pure-form pure-form-aligned">
 			<fieldset>
 				<div class="pure-control-group">

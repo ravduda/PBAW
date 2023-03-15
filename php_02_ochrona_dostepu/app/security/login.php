@@ -1,7 +1,8 @@
 <?php
 require_once dirname(__FILE__).'/../../config.php';
 
-session_start();
+if(!isset($_SESSION))
+    session_start();
 
 $form = [];
 $messages = [];

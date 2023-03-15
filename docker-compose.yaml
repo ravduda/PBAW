@@ -6,6 +6,8 @@ services:
     container_name: php
     ports:
       - 80:80
+    volumes:
+      - ./:/var/www/html/
   phpmyadmin:
     container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin:latest

@@ -1,0 +1,48 @@
+{extends file="elements.html"} {block name=content}
+
+<form method="post" action="ctrl.php">
+  <input type="hidden" name="action" value="calcCompute" />
+  <div class="row gtr-uniform">
+    <div class="col-6 col-12-xsmall">
+      <input
+        type="text"
+        name="kwota"
+        id="kwota"
+        value="{$kwota}"
+        placeholder="kwota"
+      />
+    </div>
+    <div class="col-6 col-12-xsmall">
+      <input type="text" name="lat" id="lat" value="{$lat}" placeholder="lat" />
+    </div>
+    <div class="col-12">
+      <input
+        type="text"
+        name="procent"
+        id="procent"
+        value="{$procent}"
+        placeholder="procent"
+      />
+    </div>
+    <!-- Break -->
+    <div class="col-12">
+      <ul class="actions">
+        <li>
+          <input type="submit" value="Oblicz" class="primary" />
+        </li>
+      </ul>
+    </div>
+  </div>
+</form>
+
+{if isset($messages)} {if count($messages) > 0}
+<h4>Wystąpiły błędy:</h4>
+<ol class="err">
+  {foreach $messages as $msg} {strip}
+  <li>{$msg}</li>
+  {/strip} {/foreach}
+</ol>
+{/if} {/if} {if isset($result)}
+<h4>Wynik</h4>
+<p class="res">{$result}</p>
+{/if} {/block}

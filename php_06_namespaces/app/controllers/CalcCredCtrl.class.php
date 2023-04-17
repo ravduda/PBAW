@@ -1,8 +1,8 @@
 <?php
 namespace app\controllers;
 
-use app\controllers\CalcCredForm;
-use app\controllers\CalcCredResult;
+use app\forms\CalcCredForm;
+use app\transfer\CalcCredResult;
 
 class CalcCredCtrl{
     private $form;

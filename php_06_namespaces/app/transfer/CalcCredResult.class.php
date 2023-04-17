@@ -1,5 +1,5 @@
 <?php
-namespace app\controllers;
+namespace app\transfer;
 class CalcCredResult{
     public $result = null;
 }

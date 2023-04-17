@@ -1,5 +1,5 @@
 <?php 
-namespace app\controllers;
+namespace app\forms;
 class CalcCredForm{
     public $kwota = null;
     public $lat = null;

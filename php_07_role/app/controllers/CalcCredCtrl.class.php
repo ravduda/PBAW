@@ -61,7 +61,7 @@ class CalcCredCtrl{
             return $this->result->result;
         }
     }
-    function process(){
+    function action_calcCompute(){
         global $conf;
         $this->getParams();
         if($this->validate())

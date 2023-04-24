@@ -1,16 +1,12 @@
 <?php
 require_once 'init.php';
 
-getConf()->login_action = 'login';
+getRouter()->setDefaultRoute('calcCompute'); // akcja/ścieżka domyślna
+getRouter()->setLoginRoute('login'); // akcja/ścieżka na potrzeby logowania (przekierowanie, gdy nie ma dostępu)
 
-switch ($action) {
-	default :
-		control('app\\controllers', 'CalcCredCtrl',		'process', ['user','admin']);
-	case 'login': 
-		control('app\\controllers', 'LoginCtrl',	'doLogin');
-	case 'calcCompute' : 
-		//zamiast pierwszego parametru można podać null lub '' wtedy zostanie przyjęta domyślna przestrzeń nazw dla kontrolerów
-		control(null, 'CalcCredCtrl',	'process',		['user','admin']);
-	case 'logout' : 
-		control(null, 'LoginCtrl',	'doLogout',		['user','admin']);
-}
+// getRouter()->addRoute('calcShow',    'CalcCredCtrl',  ['user','admin']);
+getRouter()->addRoute('calcCompute', 'CalcCredCtrl',  ['user','admin']);
+getRouter()->addRoute('login',       'LoginCtrl');
+getRouter()->addRoute('logout',      'LoginCtrl', ['user','admin']);
+
+getRouter()->go(); //wybiera i uruchamia odpowiednią ścieżkę na podstawie parametru 'action';
